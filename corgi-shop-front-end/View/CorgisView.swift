@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CorgisView: View {
+    
     var body: some View {
         ZStack{
             Background()
