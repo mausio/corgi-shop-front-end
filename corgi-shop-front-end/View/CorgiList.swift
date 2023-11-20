@@ -16,6 +16,9 @@ struct CorgiList: View {
     let tabBarColor = UIColor(named: "darkColor")
     let tabBarUIColorBackground = UIColor(named: "lightColor")
     
+    let imgHeight: CGFloat = 100
+    let imgWidth: CGFloat = 120
+    
     var body: some View {
             NavigationView{
                 ZStack {
@@ -27,9 +30,11 @@ struct CorgiList: View {
                             CorgiDetail(corgi: corgi)
                         } label: {
                             HStack {
-                                URLCorgiPreviewImage(urlString: corgi.imageUrl)
-                                    .frame(width: 100, height: 80)
-                                    .cornerRadius(5)
+                                URLCorgiPreviewImage(urlString: corgi.imageUrl, imgHeight: imgHeight, imgWidth: imgWidth)
+                                    .frame(maxWidth: imgWidth, maxHeight: imgHeight)
+                                    .shadow(radius: 5)
+                                    .padding(.trailing, 10)
+                                
                             
                                 if let corgiName = corgi.name {
                                     Text(corgiName)

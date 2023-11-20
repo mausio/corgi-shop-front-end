@@ -11,7 +11,7 @@ class CorgiModel: ObservableObject{
     @Published var corgis: [Corgi] = []
     
     func fetch(){
-        guard let url = URL(string: "http://localhost:5050/api/corgis")
+        guard let url = URL(string: "http://localhost:8080/api/corgis")
         else{
             return
         }

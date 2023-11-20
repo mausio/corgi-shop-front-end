@@ -9,9 +9,13 @@ import SwiftUI
 
 struct CartView: View {
     var body: some View {
-        ZStack{
-            Background()
-            Text("Checkout")
+        NavigationStack{
+            ZStack{
+                Background()
+                ScrollView{
+                    Text("Hello Cart!")
+                }.navigationTitle("Cart")
+            }
         }
     }
 }

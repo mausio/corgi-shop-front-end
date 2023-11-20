@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C934C9902B0B55EB00DBDB17 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934C98F2B0B55EB00DBDB17 /* CategoryView.swift */; };
 		C93D6B582AE117200022D8C7 /* corgi_shop_front_endApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B572AE117200022D8C7 /* corgi_shop_front_endApp.swift */; };
 		C93D6B692AE117210022D8C7 /* corgi_shop_front_endTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B682AE117210022D8C7 /* corgi_shop_front_endTests.swift */; };
 		C93D6B732AE117210022D8C7 /* corgi_shop_front_endUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B722AE117210022D8C7 /* corgi_shop_front_endUITests.swift */; };
 		C93D6B752AE117210022D8C7 /* corgi_shop_front_endUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B742AE117210022D8C7 /* corgi_shop_front_endUITestsLaunchTests.swift */; };
 		C93D6B942AE117440022D8C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B812AE117430022D8C7 /* ContentView.swift */; };
-		C93D6B952AE117440022D8C7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B832AE117430022D8C7 /* CategoryView.swift */; };
+		C93D6B952AE117440022D8C7 /* MerchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B832AE117430022D8C7 /* MerchView.swift */; };
 		C93D6B962AE117440022D8C7 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B842AE117430022D8C7 /* Background.swift */; };
 		C93D6B972AE117440022D8C7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B852AE117430022D8C7 /* HomeView.swift */; };
 		C93D6B982AE117440022D8C7 /* CorgisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B862AE117430022D8C7 /* CorgisView.swift */; };
@@ -28,6 +29,7 @@
 		C93D6BA22AE117440022D8C7 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B912AE117440022D8C7 /* Object.swift */; };
 		C93D6BA52AE118990022D8C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93D6BA42AE118990022D8C7 /* Assets.xcassets */; };
 		C93D6BA72AE12DA80022D8C7 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6BA62AE12DA80022D8C7 /* URLImage.swift */; };
+		C9EC2C5D2B08995000E7F4A0 /* CategoryRectPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C934C98F2B0B55EB00DBDB17 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C93D6B542AE117200022D8C7 /* corgi-shop-front-end.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "corgi-shop-front-end.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93D6B572AE117200022D8C7 /* corgi_shop_front_endApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corgi_shop_front_endApp.swift; sourceTree = "<group>"; };
 		C93D6B642AE117210022D8C7 /* corgi-shop-front-endTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "corgi-shop-front-endTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +59,7 @@
 		C93D6B722AE117210022D8C7 /* corgi_shop_front_endUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corgi_shop_front_endUITests.swift; sourceTree = "<group>"; };
 		C93D6B742AE117210022D8C7 /* corgi_shop_front_endUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corgi_shop_front_endUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C93D6B812AE117430022D8C7 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../corgi-shop/corgi-shop-front-end/ContentView.swift"; sourceTree = "<group>"; };
-		C93D6B832AE117430022D8C7 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		C93D6B832AE117430022D8C7 /* MerchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchView.swift; sourceTree = "<group>"; };
 		C93D6B842AE117430022D8C7 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		C93D6B852AE117430022D8C7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C93D6B862AE117430022D8C7 /* CorgisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorgisView.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		C93D6B912AE117440022D8C7 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		C93D6BA42AE118990022D8C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C93D6BA62AE12DA80022D8C7 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRectPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,15 +163,13 @@
 		C93D6B822AE117430022D8C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C93D6B832AE117430022D8C7 /* CategoryView.swift */,
-				C93D6B842AE117430022D8C7 /* Background.swift */,
+				C9EC2C5B2B08990900E7F4A0 /* HelpViews */,
+				C93D6B892AE117430022D8C7 /* CorgiList.swift */,
+				C93D6B832AE117430022D8C7 /* MerchView.swift */,
 				C93D6B852AE117430022D8C7 /* HomeView.swift */,
 				C93D6B862AE117430022D8C7 /* CorgisView.swift */,
-				C93D6B872AE117430022D8C7 /* CorgiDetail.swift */,
-				C93D6B882AE117430022D8C7 /* LottieView.swift */,
-				C93D6B892AE117430022D8C7 /* CorgiList.swift */,
+				C934C98F2B0B55EB00DBDB17 /* CategoryView.swift */,
 				C93D6B8A2AE117430022D8C7 /* CartView.swift */,
-				C93D6BA62AE12DA80022D8C7 /* URLImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +193,18 @@
 				C93D6BA42AE118990022D8C7 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		C9EC2C5B2B08990900E7F4A0 /* HelpViews */ = {
+			isa = PBXGroup;
+			children = (
+				C93D6B842AE117430022D8C7 /* Background.swift */,
+				C93D6B882AE117430022D8C7 /* LottieView.swift */,
+				C93D6B872AE117430022D8C7 /* CorgiDetail.swift */,
+				C93D6BA62AE12DA80022D8C7 /* URLImage.swift */,
+				C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */,
+			);
+			path = HelpViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,15 +341,17 @@
 				C93D6B9A2AE117440022D8C7 /* LottieView.swift in Sources */,
 				C93D6BA02AE117440022D8C7 /* ObjectLoader.swift in Sources */,
 				C93D6B9D2AE117440022D8C7 /* TabBar.swift in Sources */,
+				C934C9902B0B55EB00DBDB17 /* CategoryView.swift in Sources */,
 				C93D6B582AE117200022D8C7 /* corgi_shop_front_endApp.swift in Sources */,
 				C93D6B992AE117440022D8C7 /* CorgiDetail.swift in Sources */,
 				C93D6BA22AE117440022D8C7 /* Object.swift in Sources */,
 				C93D6BA72AE12DA80022D8C7 /* URLImage.swift in Sources */,
 				C93D6B9F2AE117440022D8C7 /* corgi_shopApp.swift in Sources */,
-				C93D6B952AE117440022D8C7 /* CategoryView.swift in Sources */,
+				C93D6B952AE117440022D8C7 /* MerchView.swift in Sources */,
 				C93D6B9C2AE117440022D8C7 /* CartView.swift in Sources */,
 				C93D6B9B2AE117440022D8C7 /* CorgiList.swift in Sources */,
 				C93D6B972AE117440022D8C7 /* HomeView.swift in Sources */,
+				C9EC2C5D2B08995000E7F4A0 /* CategoryRectPreview.swift in Sources */,
 				C93D6B9E2AE117440022D8C7 /* FetchData.swift in Sources */,
 				C93D6B942AE117440022D8C7 /* ContentView.swift in Sources */,
 				C93D6B962AE117440022D8C7 /* Background.swift in Sources */,

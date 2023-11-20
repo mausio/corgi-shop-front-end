@@ -21,16 +21,16 @@ struct Corgi: Hashable, Codable {
     var male: Bool?
 }
 
-struct Item {
-    var id: Int
-    var name: String
-    var price: Int
-    var isFavorite: Bool
-    var description: String
-    var imageUrl: String
+struct Item: Hashable, Codable{
+    var id: Int?
+    var name: String?
+    var price: Int?
+    var isFavorite: Bool?
+    var description: String?
+    var imageUrl: String?
 }
 
-struct Category{
-    var name: String
-    var imageUrl: String
+struct Category: Hashable, Codable{
+    var name: String?
+    var imageUrl: String?
 }
