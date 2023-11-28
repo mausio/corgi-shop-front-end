@@ -13,7 +13,26 @@ struct HomeView: View {
             ZStack{
                 Background()
                 ScrollView{
-                    Text("Home, Sweet Home")
+                    VStack{
+                            HStack{
+                                Text("Hallo, User!")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                Image(systemName: "person")
+                                    .padding(10)
+                                    .foregroundColor(.white)
+                                    .background(Color("lightColor"))
+                                    .cornerRadius(.infinity)
+                                    .shadow(radius: 5)
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 8)
+                        .background(.ultraThinMaterial)
+                    }
+                        
                 }.navigationTitle("Home")
             }
         }

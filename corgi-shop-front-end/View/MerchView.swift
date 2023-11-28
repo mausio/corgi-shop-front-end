@@ -40,27 +40,29 @@ struct MerchView: View {
             NavigationStack{
                 Background()
                     .overlay(){
-                        ScrollView{
-                            VStack(alignment: .leading){
-                                Text("Categories")
-                                    .font(.title2)
-                                    .foregroundStyle(.white)
-                                    .padding(.leading, 10)
-                                    .padding(.top, 20)
-                                    .fontWeight(.bold)
-                                
-                                ScrollView(.horizontal, showsIndicators: false){
-                                    HStack(spacing: 10){
-                                        ForEach(categories, id: \.self) {category in
-                                            if (category.imageUrl != nil && category.name != nil) {
-                                                NavigationLink() {
-                                                    CategoryView(category: category)
-                                                } label: {
-                                                    CategoryRectPreview(category: category)
+                        ScrollView(){
+                            VStack{
+                                VStack(alignment: .leading){
+                                    Text("Categories")
+                                        .font(.title2)
+                                        .padding(.leading, 20)
+                                        
+                                        .fontWeight(.bold)
+                                    
+                                    ScrollView(.horizontal, showsIndicators: false){
+                                        
+                                        HStack(spacing: 10){
+                                            ForEach(categories, id: \.self) {category in
+                                                if (category.imageUrl != nil && category.name != nil) {
+                                                    NavigationLink() {
+                                                        CategoryView(category: category)
+                                                    } label: {
+                                                        CategoryRectPreview(category: category)
+                                                    }
                                                 }
-                                            }
-                                        }.padding(.leading, 10)
-                                    }.padding()
+                                            }.padding(.leading, 10)
+                                        }.padding()
+                                    }
                                 }
                                 
                                 VStack(alignment: .leading){
@@ -70,42 +72,51 @@ struct MerchView: View {
                                             CategoryView(category: category)
                                         } label:{
                                             VStack(alignment: .leading){
-                                            if let categoryName = category.name {
-                                                Text(categoryName)
-                                                    .font(.title2)
-                                                    .foregroundStyle(.white)
-                                                    .padding(.leading, 10)
-                                                    .padding(.top, 20)
-                                                    .fontWeight(.bold)
-                                            }
-                                            
-                                            
+                                                if let categoryName = category.name {
+                                                    Text(categoryName)
+                                                        .font(.title2)
+                                                        .foregroundStyle(Color.primary)
+                                                        .fontWeight(.bold)
+                                                }
                                                 Grid(){
                                                     GridRow(){
-                                                        ForEach(items[0...3], id: \.self) {item in
+                                                        ForEach(items[0...4], id: \.self) {item in
                                                             ItemCategoryPreview(urlString: item.imageUrl, recWidth: 50, recHeight: 50)
                                                                 .shadow(radius: 10)
+                                                                .offset(x: 20)
                                                         }
-                                                    }
-                                                    
-                                                    
-                                                    GridRow(){
-                                                        ForEach(items[4...7], id: \.self) {item in
-                                                            ItemCategoryPreview(urlString: item.imageUrl, recWidth: 50, recHeight: 50)
-                                                                .shadow(radius: 10)
-                                                        }
+                                                        
+                                                        Image(systemName: "arrow.up.right.square.fill")
+                                                            .resizable()
+                                                            .background(Color.white)
+                                                            .cornerRadius(10)
+                                                            .padding(20)
+                                                            .aspectRatio(contentMode: .fill)
+                                                            .frame(width: 80)
+                                                            .foregroundStyle(Color.black)
+                                                            .offset(x: -15, y: -38)
+                                                            .shadow(radius: 3)
+                                                            
+                                                        
                                                     }
                                                 }
-                                            }.padding(.horizontal, 10)
+                                                .offset(x: 20)
+                                            }.padding(.horizontal, 20)
+                                                .padding(.top, 20)
+                                                
+                                               
                                         }
                                     }
+                                    
                                 }
                                 
+                                }.navigationTitle("Merch")
+                                .padding(.top, 20)
+                                .padding(.bottom, 40)
+                                .background(.ultraThinMaterial)
                                 
-                                Spacer()
-                            }.navigationTitle("Merch")
+                            }
                         }
-                    }
             }
     }
     }

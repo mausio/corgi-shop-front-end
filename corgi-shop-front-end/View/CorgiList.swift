@@ -20,7 +20,7 @@ struct CorgiList: View {
     let imgWidth: CGFloat = 120
     
     var body: some View {
-            NavigationView{
+            NavigationStack{
                 ZStack {
                     Background()
 
@@ -33,7 +33,7 @@ struct CorgiList: View {
                                 URLCorgiPreviewImage(urlString: corgi.imageUrl, imgHeight: imgHeight, imgWidth: imgWidth)
                                     .frame(maxWidth: imgWidth, maxHeight: imgHeight)
                                     .shadow(radius: 5)
-                                    .padding(.trailing, 10)
+                                    .padding(0)
                                 
                             
                                 if let corgiName = corgi.name {
@@ -52,6 +52,7 @@ struct CorgiList: View {
                     UITabBar.appearance().backgroundColor = tabBarUIColorBackground
                 }
             }
+                
         }
     }
 }

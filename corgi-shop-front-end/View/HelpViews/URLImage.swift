@@ -23,6 +23,7 @@ struct URLCorgiPreviewImage: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: imgWidth, height: imgHeight)
                 .cornerRadius(10)
+                .padding(0)
                 
                 
         }
@@ -36,6 +37,7 @@ struct URLCorgiPreviewImage: View {
                 .onAppear(){
                     fetchSinglePhoto()
                 }
+                .padding(0)
         }
     }
     
