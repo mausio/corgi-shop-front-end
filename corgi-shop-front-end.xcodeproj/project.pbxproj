@@ -29,6 +29,7 @@
 		C93D6BA22AE117440022D8C7 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6B912AE117440022D8C7 /* Object.swift */; };
 		C93D6BA52AE118990022D8C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93D6BA42AE118990022D8C7 /* Assets.xcassets */; };
 		C93D6BA72AE12DA80022D8C7 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6BA62AE12DA80022D8C7 /* URLImage.swift */; };
+		C96977642B17523100D4D54D /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96977632B17523100D4D54D /* ItemView.swift */; };
 		C9EC2C5D2B08995000E7F4A0 /* CategoryRectPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		C93D6B912AE117440022D8C7 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		C93D6BA42AE118990022D8C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C93D6BA62AE12DA80022D8C7 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		C96977632B17523100D4D54D /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRectPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 				C93D6B872AE117430022D8C7 /* CorgiDetail.swift */,
 				C93D6BA62AE12DA80022D8C7 /* URLImage.swift */,
 				C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */,
+				C96977632B17523100D4D54D /* ItemView.swift */,
 			);
 			path = HelpViews;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				C93D6B982AE117440022D8C7 /* CorgisView.swift in Sources */,
 				C93D6BA12AE117440022D8C7 /* UrlSession.swift in Sources */,
 				C93D6B9A2AE117440022D8C7 /* LottieView.swift in Sources */,
+				C96977642B17523100D4D54D /* ItemView.swift in Sources */,
 				C93D6BA02AE117440022D8C7 /* ObjectLoader.swift in Sources */,
 				C93D6B9D2AE117440022D8C7 /* TabBar.swift in Sources */,
 				C934C9902B0B55EB00DBDB17 /* CategoryView.swift in Sources */,
