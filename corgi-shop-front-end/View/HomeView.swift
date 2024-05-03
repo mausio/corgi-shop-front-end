@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
+    
+    @State var helloStatement: String = "Hello, log in pls!"
+    @State private var isModalPresented = false
+    @State private var loggedIn = false
+    
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -15,9 +22,18 @@ struct HomeView: View {
                 ScrollView{
                     VStack{
                             HStack{
-                                Text("Hallo, User!")
+                                Text(helloStatement)
                                     .font(.title2)
                                     .fontWeight(.bold)
+                                    .toolbar{
+                                        if !loggedIn {
+                                            ToolbarItem(placement: .topBarTrailing) {
+                                                Button("Log in"){isModalPresented.toggle()}
+                                                    .foregroundColor(.white)
+                                                .bold()}
+                                        }
+                                        }
+    
                                 
                                 Spacer()
                                 
@@ -33,8 +49,13 @@ struct HomeView: View {
                         .background(.ultraThinMaterial)
                     }
                         
-                }.navigationTitle("Home")
+                }
+                    
             }
+            .navigationTitle("Home")
+        }
+        .sheet(isPresented: $isModalPresented) {
+            LoginView().modelContainer(for: [UserModel.self])
         }
     }
 }

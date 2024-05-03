@@ -30,6 +30,10 @@
 		C93D6BA52AE118990022D8C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93D6BA42AE118990022D8C7 /* Assets.xcassets */; };
 		C93D6BA72AE12DA80022D8C7 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D6BA62AE12DA80022D8C7 /* URLImage.swift */; };
 		C96977642B17523100D4D54D /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96977632B17523100D4D54D /* ItemView.swift */; };
+		C9A006902BE15B7C00129743 /* cartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0068F2BE15B7C00129743 /* cartModel.swift */; };
+		C9A006932BE2480B00129743 /* cartHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A006922BE2480B00129743 /* cartHelpers.swift */; };
+		C9B45CCA2BE2520F0020AFC6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B45CC92BE2520F0020AFC6 /* LoginView.swift */; };
+		C9B45CCC2BE25BF30020AFC6 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B45CCB2BE25BF30020AFC6 /* userModel.swift */; };
 		C9EC2C5D2B08995000E7F4A0 /* CategoryRectPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,11 @@
 		C93D6BA42AE118990022D8C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C93D6BA62AE12DA80022D8C7 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		C96977632B17523100D4D54D /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		C9A0068F2BE15B7C00129743 /* cartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartModel.swift; sourceTree = "<group>"; };
+		C9A006922BE2480B00129743 /* cartHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartHelpers.swift; sourceTree = "<group>"; };
+		C9B45CC92BE2520F0020AFC6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C9B45CCB2BE25BF30020AFC6 /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
+		C9C8AF9C2BE00B5600694664 /* TestPlan_1.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan_1.xctestplan; sourceTree = "<group>"; };
 		C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRectPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +137,8 @@
 		C93D6B562AE117200022D8C7 /* corgi-shop-front-end */ = {
 			isa = PBXGroup;
 			children = (
+				C9A006912BE247FC00129743 /* Helper Functions */,
+				C9A0068E2BE1560B00129743 /* Data Model */,
 				C93D6B922AE117440022D8C7 /* Assets */,
 				C93D6B812AE117430022D8C7 /* ContentView.swift */,
 				C93D6B8B2AE117440022D8C7 /* Model */,
@@ -148,6 +159,7 @@
 		C93D6B672AE117210022D8C7 /* corgi-shop-front-endTests */ = {
 			isa = PBXGroup;
 			children = (
+				C9C8AF9C2BE00B5600694664 /* TestPlan_1.xctestplan */,
 				C93D6B682AE117210022D8C7 /* corgi_shop_front_endTests.swift */,
 			);
 			path = "corgi-shop-front-endTests";
@@ -197,6 +209,23 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		C9A0068E2BE1560B00129743 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0068F2BE15B7C00129743 /* cartModel.swift */,
+				C9B45CCB2BE25BF30020AFC6 /* userModel.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		C9A006912BE247FC00129743 /* Helper Functions */ = {
+			isa = PBXGroup;
+			children = (
+				C9A006922BE2480B00129743 /* cartHelpers.swift */,
+			);
+			path = "Helper Functions";
+			sourceTree = "<group>";
+		};
 		C9EC2C5B2B08990900E7F4A0 /* HelpViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +235,7 @@
 				C93D6BA62AE12DA80022D8C7 /* URLImage.swift */,
 				C9EC2C5C2B08995000E7F4A0 /* CategoryRectPreview.swift */,
 				C96977632B17523100D4D54D /* ItemView.swift */,
+				C9B45CC92BE2520F0020AFC6 /* LoginView.swift */,
 			);
 			path = HelpViews;
 			sourceTree = "<group>";
@@ -340,8 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93D6B982AE117440022D8C7 /* CorgisView.swift in Sources */,
+				C9A006932BE2480B00129743 /* cartHelpers.swift in Sources */,
+				C9B45CCC2BE25BF30020AFC6 /* userModel.swift in Sources */,
 				C93D6BA12AE117440022D8C7 /* UrlSession.swift in Sources */,
 				C93D6B9A2AE117440022D8C7 /* LottieView.swift in Sources */,
+				C9B45CCA2BE2520F0020AFC6 /* LoginView.swift in Sources */,
 				C96977642B17523100D4D54D /* ItemView.swift in Sources */,
 				C93D6BA02AE117440022D8C7 /* ObjectLoader.swift in Sources */,
 				C93D6B9D2AE117440022D8C7 /* TabBar.swift in Sources */,
@@ -349,6 +382,7 @@
 				C93D6B582AE117200022D8C7 /* corgi_shop_front_endApp.swift in Sources */,
 				C93D6B992AE117440022D8C7 /* CorgiDetail.swift in Sources */,
 				C93D6BA22AE117440022D8C7 /* Object.swift in Sources */,
+				C9A006902BE15B7C00129743 /* cartModel.swift in Sources */,
 				C93D6BA72AE12DA80022D8C7 /* URLImage.swift in Sources */,
 				C93D6B9F2AE117440022D8C7 /* corgi_shopApp.swift in Sources */,
 				C93D6B952AE117440022D8C7 /* MerchView.swift in Sources */,

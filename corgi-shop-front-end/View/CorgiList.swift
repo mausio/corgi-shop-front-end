@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CorgiList: View {
     @StateObject var corgiModel = CorgiModel()
@@ -27,7 +28,7 @@ struct CorgiList: View {
                 List {
                     ForEach(corgiModel.corgis, id: \.self) { corgi in
                         NavigationLink{
-                            CorgiDetail(corgi: corgi)
+                            CorgiDetail(corgi: corgi).modelContainer(for: [CartModel.self])
                         } label: {
                             HStack {
                                 URLCorgiPreviewImage(urlString: corgi.imageUrl, imgHeight: imgHeight, imgWidth: imgWidth)
@@ -40,11 +41,11 @@ struct CorgiList: View {
                                     Text(corgiName)
                                 }
                             }
-                            .padding(.vertical, 20)
+                            .padding(.vertical, 10)
                         }
                     }
                 }
-                .listStyle(PlainListStyle())
+                .scrollContentBackground(.hidden)
                 .navigationTitle("Corgis")
                 .onAppear {
                     corgiModel.fetch()

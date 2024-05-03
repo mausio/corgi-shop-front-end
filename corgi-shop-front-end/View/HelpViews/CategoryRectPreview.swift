@@ -54,7 +54,7 @@ struct CategoryRectPreview: View {
 }
 
 #Preview("Category") {
-    var category = Category(name: "Kissen", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQacf4n1UIVbzFSiIDYZHnTSqHBxuT0BZuL3zgOJ5sgwVFGjADsd49Eqe0WYUkDCQ04MA&usqp=CAU")
+    let category = Category(name: "Kissen", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQacf4n1UIVbzFSiIDYZHnTSqHBxuT0BZuL3zgOJ5sgwVFGjADsd49Eqe0WYUkDCQ04MA&usqp=CAU")
     
     return CategoryRectPreview(category: category)
 }
@@ -119,7 +119,7 @@ struct ItemRectPreview: View {
 }
 
 #Preview("Item") {
-    var item = Item(id: 1, name: "Item 1", price: 10, isFavorite: true, description: "This is item 1.", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQacf4n1UIVbzFSiIDYZHnTSqHBxuT0BZuL3zgOJ5sgwVFGjADsd49Eqe0WYUkDCQ04MA&usqp=CAU")
+    let item = Item(id: 1, name: "Item 1", price: 10, isFavorite: true, description: "This is item 1.", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQacf4n1UIVbzFSiIDYZHnTSqHBxuT0BZuL3zgOJ5sgwVFGjADsd49Eqe0WYUkDCQ04MA&usqp=CAU")
     
     return ItemRectPreview(item: item)
 }

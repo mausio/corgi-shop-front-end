@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "C2B70DE5-E9FD-4105-8091-9E0110F5412E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:corgi-shop-front-end.xcodeproj",
+        "identifier" : "C93D6B632AE117210022D8C7",
+        "name" : "corgi-shop-front-endTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:corgi-shop-front-end.xcodeproj",
+        "identifier" : "C93D6B6D2AE117210022D8C7",
+        "name" : "corgi-shop-front-endUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
