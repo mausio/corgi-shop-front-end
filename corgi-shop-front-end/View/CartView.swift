@@ -17,27 +17,44 @@ struct CartView: View {
     
     @Environment(\.modelContext) private var context
     
+    func cartItemsCount() -> Int{
+        var counter = 0;
+        for item in cartModel{
+            counter += item.amount!;
+        }
+        return counter
+    }
+    
+    func getTotalAmount() -> Double{
+        var price = 0.0;
+        for item in cartModel{
+            price += Double(item.amount! * item.price!);
+        }
+        return price
+    }
+    
     
     var body: some View {
         NavigationStack{
                 Background()
                     .overlay(){
-                        List {
-                            ForEach(cartModel){item in
-                                
-                                HStack{
-                                    URLCorgiPreviewImage(urlString: item.imageUrl, imgHeight: imgHeight, imgWidth: imgWidth)
-                                        .frame(maxWidth: imgWidth, maxHeight: imgHeight)
-                                        .shadow(radius: 5)
-                                        .padding(0)
+                        VStack{
+                            List {
+                                ForEach(cartModel){item in
                                     
-                                    Text(item.name!)
-                                    
-                                    Spacer()
-                                    
-                                    Text("\(item.price! * item.amount!)€")
-                                        .padding(.horizontal, 5)
-                                }
+                                    HStack{
+                                        URLCorgiPreviewImage(urlString: item.imageUrl, imgHeight: imgHeight, imgWidth: imgWidth)
+                                            .frame(maxWidth: imgWidth, maxHeight: imgHeight)
+                                            .shadow(radius: 5)
+                                            .padding(0)
+                                        
+                                        Text(item.name!)
+                                        
+                                        Spacer()
+                                        
+                                        Text("\(item.price! * item.amount!)€")
+                                            .padding(.horizontal, 5)
+                                    }
                                     .swipeActions(edge: .leading) {
                                         Button {
                                             print("Adding")
@@ -100,11 +117,51 @@ struct CartView: View {
                                     }
                                     .badge(item.amount! > 1 ? item.amount! : 0)
                                     
+                                }
                             }
-                        }
                             
                             .listRowSpacing(16.0)
                             .scrollContentBackground(.hidden)
+                            
+                            
+                            HStack{
+                                
+                                if(cartItemsCount() < 1){
+                                    Text("No Items in Cart")
+                                        .padding()
+                                } else                                 if(cartItemsCount() == 1){
+                                    Text("\(cartModel.count) Item")
+                                        .bold()
+                                    
+                                    
+                                    Divider()
+                                        .frame(height: 20)
+                                        .padding()
+                                    
+                                    Text("Total amount: \(String(format: "%.2f", getTotalAmount()))€")
+                                        .bold()
+                                }
+                                else{
+                                    Text("\(cartItemsCount()) Items")
+                                        .bold()
+                                    
+                                    
+                                    Divider()
+                                        .frame(height: 20)
+                                        .padding()
+                                        
+                                    Text("Total amount: \(String(format: "%.2f", getTotalAmount()))€")
+                                        .bold()
+                                }
+                                
+                            
+                            }
+                            .frame(maxWidth: .infinity)
+                            .background()
+                            .cornerRadius(10)
+                            .padding()
+                            
+                        }
                         
                     }
                     .navigationTitle("Cart")

@@ -37,12 +37,18 @@ struct HomeView: View {
                                 
                                 Spacer()
                                 
-                                Image(systemName: "person")
-                                    .padding(10)
-                                    .foregroundColor(.white)
-                                    .background(Color("lightColor"))
-                                    .cornerRadius(.infinity)
-                                    .shadow(radius: 5)
+                                Button() {
+                                    isModalPresented.toggle()
+                                }
+                            label:{
+                                    
+                                    Image(systemName: "person")
+                                        .padding(10)
+                                        .foregroundColor(.white)
+                                        .background(Color("lightColor"))
+                                        .cornerRadius(.infinity)
+                                        .shadow(radius: 5)
+                                }
                             }
                             .padding(.horizontal, 20)
                             .padding(.vertical, 8)

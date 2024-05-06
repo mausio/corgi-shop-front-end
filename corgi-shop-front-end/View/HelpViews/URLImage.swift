@@ -160,7 +160,7 @@ struct ItemCategoryPreview: View {
         else{
             Image(systemName: "hanger")
                 .resizable()
-                .aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .padding(25)
                 .cornerRadius(10)
                 .onAppear(){
@@ -182,3 +182,45 @@ struct ItemCategoryPreview: View {
     }
 }
 
+struct URLitemDetailImage: View {
+    let urlString: String?
+    
+    @State var data: Data?
+    
+    var body: some View {
+        
+        if let data = data, let uiimage = UIImage(data: data){
+            Image(uiImage: uiimage)
+                .resizable()
+                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                .frame(maxWidth: .infinity)
+                .cornerRadius(10)
+//                .padding(60)
+                .ignoresSafeArea()
+                
+        }
+        else{
+            Image(systemName: "dog")
+                .resizable()
+                .padding(50)
+                
+                .background(Color.gray)
+                .opacity(0.7)
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity)
+                .onAppear(){
+                    fetchSinglePhoto()
+                }
+        }
+    }
+    
+    private func fetchSinglePhoto(){
+        if let urlString = urlString, let url = URL(string: urlString) {
+            let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+                self.data = data
+            }
+            task.resume()
+        } else {
+        }
+    }
+}

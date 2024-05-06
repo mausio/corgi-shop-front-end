@@ -26,7 +26,14 @@ class CorgiModel: ObservableObject{
             print(data)
             
             do{
-                let corgis = try JSONDecoder().decode([Corgi].self, from: data)
+                var corgis = try JSONDecoder().decode([Corgi].self, from: data)
+              
+              corgis = corgis.map { corgi in
+                   var mutableCorgi = corgi
+                   mutableCorgi.uuid = UUID()
+                   return mutableCorgi
+               }
+              
                 DispatchQueue.main.async {
                     
                     self?.corgis = corgis
@@ -37,6 +44,44 @@ class CorgiModel: ObservableObject{
             }
         }
         
+        task.resume()
+    }
+}
+
+
+class MerchModel: ObservableObject {
+    @Published var categories: [Category] = []
+    
+    let urlAddress = "https://corgi.melonigemelone.de/api/categories"
+    
+    func fetch() {
+        guard let url = URL(string: urlAddress) else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            print(data)
+            do {
+                var categories = try JSONDecoder().decode([Category].self, from: data)
+                // Generate and assign UUIDs to each Category object
+                categories = categories.map { category in
+                    var mutableCategory = category
+                  mutableCategory.items = mutableCategory.items.map{ item in
+                    var mutableItem = item
+                    mutableItem.uuid = UUID()
+                    return mutableItem
+                  }
+                    return mutableCategory
+                }
+                DispatchQueue.main.async {
+                    self?.categories = categories
+                }
+            } catch {
+                print(error)
+            }
+        }
         task.resume()
     }
 }

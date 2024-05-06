@@ -9,7 +9,8 @@ import Foundation
 import SwiftData
 
 @Model
-final class CartModel {
+final class CartModel: Identifiable {
+  var uuid: UUID
     var id: Int?
     var name: String?
     var price: Int?
@@ -19,7 +20,8 @@ final class CartModel {
     var isCorgi: Bool
     var amount: Int?
     
-    init(id: Int?, name: String?, price: Int?, descrip: String?, imageUrl: String?, isCorgi: Bool, amount: Int?){
+  init(uuid: UUID, id: Int?, name: String?, price: Int?, descrip: String?, imageUrl: String?, isCorgi: Bool, amount: Int?){
+      self.uuid = uuid
         self.id = id
         self.name = name
         self.price = price

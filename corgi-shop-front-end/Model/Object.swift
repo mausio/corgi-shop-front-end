@@ -8,6 +8,7 @@
 import Foundation
 
 struct Corgi: Hashable, Codable {
+  var uuid: UUID?
     var id: Int?
     var name: String?
     var price: Int?
@@ -22,6 +23,7 @@ struct Corgi: Hashable, Codable {
 }
 
 struct Item: Hashable, Codable{
+  var uuid: UUID?
     var id: Int?
     var name: String?
     var price: Int?
@@ -31,6 +33,8 @@ struct Item: Hashable, Codable{
 }
 
 struct Category: Hashable, Codable{
+    var id: Int?
     var name: String?
     var imageUrl: String?
+    var items: [Item]
 }
