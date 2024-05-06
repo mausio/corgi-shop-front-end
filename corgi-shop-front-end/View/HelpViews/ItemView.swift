@@ -44,17 +44,21 @@ struct ItemView: View {
                         Spacer()
                         
                         Button{
-                            
                             let existingItem = cartModel.first { $0.uuid == item.uuid }
-                          
 
                             if existingItem != nil {
                               existingItem!.amount = existingItem!.amount! + 1
                             } 
                             else {
-                              let newItem = CartModel(uuid: UUID.init(), id: item.id, name: item.name, price: item.price, descrip: item.description, imageUrl: item.imageUrl, isCorgi: false, amount: 1)
+                              let newItem = CartModel(uuid: item.uuid, id: item.id, name: item.name, price: item.price, descrip: item.description, imageUrl: item.imageUrl, isCorgi: false, amount: 1)
                               context.insert(newItem)
                             }
+                          
+                          do {
+                            try context.save()
+                          } catch{
+                            print(error.localizedDescription)
+                          }
                             
                         } label: {
                             Image(systemName: "cart")

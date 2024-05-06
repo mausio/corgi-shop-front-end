@@ -56,60 +56,68 @@ struct CartView: View {
                                             .padding(.horizontal, 5)
                                     }
                                     .swipeActions(edge: .leading) {
+                                      if(!item.isCorgi){
                                         Button {
-                                            print("Adding")
-                                            
-                                            @State  var amount: Int = item.amount!
-                                            
-                                            if item.amount != nil {
-                                                item.amount = item.amount! + 1
-                                            }
-                                            
-                                            print(item.amount!)
-                                            
-                                            do {
-                                                try context.save()
-                                            } catch{
-                                                print(error.localizedDescription)
-                                            }
-                                            
-                                            
+                                          print("Adding")
+                                          
+                                          @State  var amount: Int = item.amount!
+                                          
+                                          if item.amount != nil {
+                                            item.amount = item.amount! + 1
+                                          }
+                                          
+                                          print(item.amount!)
+                                          
+                                          do {
+                                            try context.save()
+                                          } catch{
+                                            print(error.localizedDescription)
+                                          }
+                                          
+                                          
                                         } label: {
-                                            Label("Add", systemImage: "plus.circle")
+                                          Label("Add", systemImage: "plus.circle")
                                         }
                                         .tint(.yellow)
+                                      }
                                     }
                                     .swipeActions(edge: .trailing) {
+                                      if(!item.isCorgi && item.amount! > 1){
                                         Button {
-                                            print("Substracting")
+                                          print("Substracting")
+                                          
+                                          @State  var amount: Int = item.amount!
+                                          
+                                          if item.amount! <= 1 {
+                                            context.delete(item)
+                                          }
+                                          
+                                          else if item.amount != nil {
+                                            item.amount = item.amount! - 1
                                             
-                                            @State  var amount: Int = item.amount!
-                                            
-                                            if item.amount! <= 1 {
-                                                context.delete(item)
-                                            }
-                                            
-                                            else if item.amount != nil {
-                                                item.amount = item.amount! - 1
-                                                
-                                                print(item.amount!)
-                                            }
-                                            
-                                            do {
-                                                try context.save()
-                                            } catch{
-                                                print(error.localizedDescription)
-                                            }
-                                            
-                                            
+                                            print(item.amount!)
+                                          }
+                                          
+                                          do {
+                                            try context.save()
+                                          } catch{
+                                            print(error.localizedDescription)
+                                          }
                                         } label: {
-                                            Label("Subtract", systemImage: "minus.circle")
+                                          Label("Subtract", systemImage: "minus.circle")
                                         }
                                         .tint(.indigo)
+                                      }
                                         
                                         Button(role: .destructive) {
                                             print("Deleting Item")
                                             context.delete(item)
+                                          
+                                          do {
+                                            try context.save()
+                                          } catch{
+                                            print(error.localizedDescription)
+                                          }
                                         } label: {
                                             Label("Delete", systemImage: "trash.fill")
                                         }

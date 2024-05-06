@@ -18,6 +18,10 @@ struct CorgiDetail: View {
     @Environment(\.modelContext) private var context
     
     @Query private var cartModel: [CartModel]
+  
+  @State private var showAlert = false
+  
+  func nix(){}
     
     
     var body: some View {
@@ -50,12 +54,18 @@ struct CorgiDetail: View {
                                 let existingItem = cartModel.first { $0.uuid == corgi.uuid }
                                 
                                 if existingItem == nil {
-                                  let newItem = CartModel(uuid: UUID.init(), id: corgi.id, name: corgi.name, price: corgi.price, descrip: corgi.description, imageUrl: corgi.imageUrl, isCorgi: true, amount: 1)
+                                  let newItem = CartModel(uuid: corgi.uuid, id: corgi.id, name: corgi.name, price: corgi.price, descrip: corgi.description, imageUrl: corgi.imageUrl, isCorgi: true, amount: 1)
                                     context.insert(newItem)
                                 } else {
-                                    // Item already exists in the cart, handle accordingly (e.g., show a message)
                                     print("Item already exists in the cart.")
+                                    showAlert = true
                                 }
+                              
+                              do {
+                                try context.save()
+                              } catch{
+                                print(error.localizedDescription)
+                              }
                                 
                             } label: {
                                 Image(systemName: "cart")
@@ -64,6 +74,10 @@ struct CorgiDetail: View {
                                     .foregroundColor(darkColor)
                                     .background(lightColor)
                                     .cornerRadius(10)
+                            }.alert(isPresented: $showAlert){
+                              Alert(title: Text("No can do."),
+                                    message: Text("There shall be only one \(corgi.name ?? "Corgi of this kind") in your Cart! 🥲")
+                                    )
                             }
                                 
                         
