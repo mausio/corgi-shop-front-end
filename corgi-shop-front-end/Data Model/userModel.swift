@@ -62,7 +62,6 @@ final class UserModel {
           self?.hasError = true
         } else if let data = data {
           do {
-            print(data)
             
             if let booleanResponse = try? JSONDecoder().decode(Bool.self, from: data) {
               
@@ -77,7 +76,6 @@ final class UserModel {
             } else {
               let signInResponse = try JSONDecoder().decode(SignInResponse.self, from: data)
               print("sign in response: ")
-              print(signInResponse)
             }
             
           } catch {

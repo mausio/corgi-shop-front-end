@@ -63,8 +63,6 @@ struct LoginView: View {
             
             Button("Login"){
               
-              print(UUID())
-              
                 let user = UserModel(mail: email, password: password)
                 
                 deleteAllUsers()

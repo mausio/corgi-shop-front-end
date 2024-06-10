@@ -52,6 +52,7 @@ struct CorgiDetail: View {
                             Button{
                                 
                                 let existingItem = cartModel.first { $0.uuid == corgi.uuid }
+                              
                                 
                                 if existingItem == nil {
                                   let newItem = CartModel(uuid: corgi.uuid, id: corgi.id, name: corgi.name, price: corgi.price, descrip: corgi.description, imageUrl: corgi.imageUrl, isCorgi: true, amount: 1)
@@ -65,6 +66,10 @@ struct CorgiDetail: View {
                                 try context.save()
                               } catch{
                                 print(error.localizedDescription)
+                              }
+                              
+                              for thing in cartModel {
+                                print(thing.uuid, thing.amount)
                               }
                                 
                             } label: {

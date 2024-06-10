@@ -66,14 +66,15 @@ struct CartView: View {
                                             item.amount = item.amount! + 1
                                           }
                                           
-                                          print(item.amount!)
-                                          
                                           do {
                                             try context.save()
                                           } catch{
                                             print(error.localizedDescription)
                                           }
                                           
+                                          for thing in cartModel {
+                                            print(thing.uuid, thing.amount)
+                                          }
                                           
                                         } label: {
                                           Label("Add", systemImage: "plus.circle")
@@ -110,7 +111,6 @@ struct CartView: View {
                                       }
                                         
                                         Button(role: .destructive) {
-                                            print("Deleting Item")
                                             context.delete(item)
                                           
                                           do {
@@ -118,6 +118,7 @@ struct CartView: View {
                                           } catch{
                                             print(error.localizedDescription)
                                           }
+                                          
                                         } label: {
                                             Label("Delete", systemImage: "trash.fill")
                                         }
@@ -174,6 +175,11 @@ struct CartView: View {
                     }
                     .navigationTitle("Cart")
                     .background(.ultraThinMaterial)
+                    .onAppear(){
+                      for thing in cartModel {
+                        print(thing.uuid, thing.amount)
+                      }
+                    }
         }
         
     }

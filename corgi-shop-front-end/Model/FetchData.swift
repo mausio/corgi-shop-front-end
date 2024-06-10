@@ -23,7 +23,6 @@ class CorgiModel: ObservableObject{
                 return
             }
             
-            print(data)
             
             do{
                 var corgis = try JSONDecoder().decode([Corgi].self, from: data)
@@ -56,13 +55,10 @@ class MerchModel: ObservableObject {
             guard let data = data, error == nil else {
                 return
             }
-            print(data)
             do {
               let categories = try JSONDecoder().decode([Category].self, from: data)
-                // Generate and assign UUIDs to each Category object
                 DispatchQueue.main.async {
                     self?.categories = categories
-                  print(categories)
                 }
             } catch {
                 print(error)

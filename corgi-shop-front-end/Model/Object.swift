@@ -23,7 +23,7 @@ struct Corgi: Hashable, Codable {
 }
 
 struct Item: Hashable, Codable{
-
+  var uuid: UUID?
     var id: Int?
     var name: String?
     var price: Int?

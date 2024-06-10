@@ -17,7 +17,6 @@ struct MerchView: View {
     @StateObject var merchModel = MerchModel()
     
     func findMax(category: Category) -> Int{
-      print("max item.count: \(category.items.count)")
         if(category.items.count < 4){
             return (category.items.count - 1)
         }else{

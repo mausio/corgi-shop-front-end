@@ -22,7 +22,6 @@ struct HomeView: View {
   
   
   private func fetchUser() {
-    print("fetching user...")
       if let user = users.first {
           firstUser = user
           loggedIn = true
@@ -33,7 +32,6 @@ struct HomeView: View {
           helloStatement = "Hello, log in pls!"
       }
     
-    print(users)
   }
     
     
