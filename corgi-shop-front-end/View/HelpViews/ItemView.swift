@@ -44,21 +44,21 @@ struct ItemView: View {
                         Spacer()
                         
                         Button{
-                            let existingItem = cartModel.first { $0.uuid == item.uuid }
-
-                            if existingItem != nil {
-                              existingItem!.amount = existingItem!.amount! + 1
-                            } 
-                            else {
-                              let newItem = CartModel(uuid: item.uuid, id: item.id, name: item.name, price: item.price, descrip: item.description, imageUrl: item.imageUrl, isCorgi: false, amount: 1)
-                              context.insert(newItem)
-                            }
-                          
-                          do {
-                            try context.save()
-                          } catch{
-                            print(error.localizedDescription)
-                          }
+//                            let existingItem = cartModel.first { $0.uuid == item.uuid }
+//
+//                            if existingItem != nil {
+//                              existingItem!.amount = existingItem!.amount! + 1
+//                            } 
+//                            else {
+//                              let newItem = CartModel(uuid: item.uuid, id: item.id, name: item.name, price: item.price, descrip: item.description, imageUrl: item.imageUrl, isCorgi: false, amount: 1)
+//                              context.insert(newItem)
+//                            }
+//                          
+//                          do {
+//                            try context.save()
+//                          } catch{
+//                            print(error.localizedDescription)
+//                          }
                             
                         } label: {
                             Image(systemName: "cart")
@@ -125,6 +125,6 @@ struct ItemView: View {
 }
 
 #Preview {
-  ItemView(item: Item(uuid: UUID.init(), id: 999, name: "Shirt", price: 123, isFavorite: false, description: "stuff", imageUrl: "https://m.media-amazon.com/images/I/61ZWOW1WNJL._AC_UY580_.jpg" ))
+  ItemView(item: Item( id: 999, name: "Shirt", price: 123, isFavorite: false, description: "stuff", imageUrl: "https://m.media-amazon.com/images/I/61ZWOW1WNJL._AC_UY580_.jpg" ))
         .modelContainer(for: [CartModel.self])
 }

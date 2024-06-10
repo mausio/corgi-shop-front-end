@@ -30,8 +30,8 @@
             filePath = "corgi-shop-front-end/View/MerchView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -46,13 +46,13 @@
             filePath = "corgi-shop-front-end/View/HelpViews/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "7C797A76-2A0A-4FCB-B5F6-036FE3D0F5F4 - fb033eaa8fb335a1"
+                  uuid = "7C797A76-2A0A-4FCB-B5F6-036FE3D0F5F4 - fb033eaa8fb33582"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,11 +62,11 @@
                   urlString = "file:///Users/mausio/coding/projects/corgi-shop/corgi-shop-front-end/corgi-shop-front-end/View/HelpViews/LoginView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42">
+                  startingLineNumber = "43"
+                  endingLineNumber = "43">
                </Location>
                <Location
-                  uuid = "7C797A76-2A0A-4FCB-B5F6-036FE3D0F5F4 - 9486aaae8cf82267"
+                  uuid = "7C797A76-2A0A-4FCB-B5F6-036FE3D0F5F4 - 9486aaae8cf82244"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -76,8 +76,8 @@
                   urlString = "file:///Users/mausio/coding/projects/corgi-shop/corgi-shop-front-end/corgi-shop-front-end/View/HelpViews/LoginView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42">
+                  startingLineNumber = "43"
+                  endingLineNumber = "43">
                </Location>
             </Locations>
          </BreakpointContent>

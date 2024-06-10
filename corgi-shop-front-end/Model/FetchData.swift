@@ -28,12 +28,6 @@ class CorgiModel: ObservableObject{
             do{
                 var corgis = try JSONDecoder().decode([Corgi].self, from: data)
               
-              corgis = corgis.map { corgi in
-                   var mutableCorgi = corgi
-                   mutableCorgi.uuid = UUID()
-                   return mutableCorgi
-               }
-              
                 DispatchQueue.main.async {
                     
                     self?.corgis = corgis
@@ -64,19 +58,11 @@ class MerchModel: ObservableObject {
             }
             print(data)
             do {
-                var categories = try JSONDecoder().decode([Category].self, from: data)
+              let categories = try JSONDecoder().decode([Category].self, from: data)
                 // Generate and assign UUIDs to each Category object
-                categories = categories.map { category in
-                    var mutableCategory = category
-                  mutableCategory.items = mutableCategory.items.map{ item in
-                    var mutableItem = item
-                    mutableItem.uuid = UUID()
-                    return mutableItem
-                  }
-                    return mutableCategory
-                }
                 DispatchQueue.main.async {
                     self?.categories = categories
+                  print(categories)
                 }
             } catch {
                 print(error)

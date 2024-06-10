@@ -9,10 +9,32 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    
+  
+  @Environment(\.modelContext) private var context
+  
+  @Query private var users: [UserModel]
+  
+  
+  @State private var firstUser: UserModel?
+  @State private var loggedIn: Bool = false
     @State var helloStatement: String = "Hello, log in pls!"
     @State private var isModalPresented = false
-    @State private var loggedIn = false
+  
+  
+  private func fetchUser() {
+    print("fetching user...")
+      if let user = users.first {
+          firstUser = user
+          loggedIn = true
+          helloStatement = "Hello, \(user.mail)!"
+      } else {
+          firstUser = nil
+          loggedIn = false
+          helloStatement = "Hello, log in pls!"
+      }
+    
+    print(users)
+  }
     
     
     var body: some View {
@@ -38,7 +60,9 @@ struct HomeView: View {
                                 Spacer()
                                 
                                 Button() {
+                                  if !loggedIn {
                                     isModalPresented.toggle()
+                                  }
                                 }
                             label:{
                                     
@@ -60,8 +84,11 @@ struct HomeView: View {
             }
             .navigationTitle("Home")
         }
-        .sheet(isPresented: $isModalPresented) {
+        .sheet(isPresented: $isModalPresented, onDismiss: fetchUser) {
             LoginView().modelContainer(for: [UserModel.self])
+        }
+        .onAppear(){
+
         }
     }
 }

@@ -10,12 +10,17 @@ import SwiftData
 
 
 struct LoginView: View {
-    @State var email: String = ""
-    @State var password: String = ""
+    @State var email: String = "user"
+    @State var password: String = "user"
+  @State private var hasError: Bool = false
     
     @Environment(\.modelContext) private var context
+  @Environment(\.dismiss) private var dismiss
     
     @Query private var users: [UserModel]
+  
+
+
     
     private func deleteAllUsers(){
         do {
@@ -50,39 +55,63 @@ struct LoginView: View {
             }
             .frame(maxWidth: .infinity)
             .cornerRadius(10)
+          
+          if hasError {
+              Text("Login failed. Please try again.")
+                  .foregroundColor(.red)
+          }
             
             Button("Login"){
+              
+              print(UUID())
+              
                 let user = UserModel(mail: email, password: password)
                 
                 deleteAllUsers()
         
-                context.insert(user)
-                
-                do {
-                    try context.save()
-                } catch{
-                    print(error.localizedDescription)
-                }
-                
-                
+                signIn(mail: email, password: password)
                 
                 for singleUser in users {
                     print(singleUser.mail)
+                  print(singleUser.password)
                 }
                 
             }
             .fontWeight(.medium)
             .padding(.vertical, 12)
+            .padding(.horizontal, 140)
             .foregroundStyle(.white)
-            .frame(maxWidth: .infinity)
             .background(.tint, in: .rect(cornerRadius: 14, style: .continuous))
             
             
+          
             Spacer()
         }
         .padding()
     }
+  
+  private func signIn(mail: String, password: String) {
+      // Simulate network sign-in process
+      let user = UserModel(mail: mail, password: password)
+      context.insert(user)
+    
+    do {
+        try context.save()
+    } catch{
+        print(error.localizedDescription)
+      hasError = true
+      return
+    }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+          // Assuming successful login
+          hasError = false
+        print("successful login")
+          dismiss()
+      }
+  }
 }
+
 
 
 #Preview ("Main View") {
